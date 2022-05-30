@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>São Paulo Futebol Clube</title>
+    <link rel="stylesheet" href="style_spfc.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <h1 class="logo"><a href="home_spfc.html"><img class="logo_spfc" src="SPFC.png" alt="SPFC"><img
+                        class="escrita_spfc" src="SPFC_escrita.jpg" alt="SPFC"></a></h1>
+
+            <ul class="navBar">
+
+                <li>
+                    <a href="login_spfc.html" class="bt_login">
+                        Login
+                    </a>
+                </li>
+                <li>
+                    |
+                </li>
+                <li> <a href="cadastro_spfc.html" class="bt_cadastro">
+                        Cadastro
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="banner">
+        <div class="container">
+            <p>
+                História e curiosidades sobre seu time do peito. <br>
+                <img src="SPFC.png" class="logo_img">
+            </p>
+        </div>
+
+    </div>
+
+    <div class="social">
+        <div class="container">
+            <div class="boxes">
+                <div class="box">
+                    <img src="imgs/taca_mundial.png" alt="Taça Mundial de Clubes">
+                    <div class="texto">
+                        <h4>História</h4>
+                        <p>
+                            Saiba mais sobre a gloriosa história do São Paulo Futebol Clube, conquistando vários
+                            títulos, conquistas, glórias, e vários fãs extremamente apaixonados.
+                        </p>
+                        <div class="div_bt_hist">
+                            <a href="historia_spfc.html">
+                                <button class="bt_hist">Saiba mais</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <button id="topo">Voltar ao topo</button>
+</body>
+
+</html>
+
+<script>
+    var btn = document.querySelector('topo');
+    btn.addEventListener("click", function () {
+        window.scrollTo(0, 0);
+    })
+</script>
