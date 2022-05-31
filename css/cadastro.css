@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .container-cadastro {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+  }
+  
+  .img-box {
+    width: 50%;
+    height: 100%;
+    background-color: rgb(110, 15, 15);
+    display: flex;
+    justify-content: center;
+  }
+  
+  .img-box img {
+    width: 70%;
+    height: 65%;
+    margin-top: 150px;
+  }
+  
+  .content-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+  }
+  
+  .content-box .formulario {
+    width: 50%;
+  }
+  
+  .content-box .formulario h2 {
+    color: rgb(184, 18, 18);
+    font-weight: 600;
+    font-size: 2em;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .content-box .formulario .input-box {
+    margin-bottom: 20px;
+  }
+  
+  .content-box .formulario .input-box input {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    font-weight: 400;
+    border: none;
+    font-size: 17px;
+    color: rgb(255, 36, 36);
+    background-color: #ecf2f7;
+    border-radius: 5px;
+  }
+  
+  .content-box .formulario .input-box span {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: rgb(255, 36, 36);
+    font-weight: 400;
+  }
+  
+  .content-box .formulario .input-box input::placeholder {
+    color: #a9adb6;
+  }
+  
+  .content-box .formulario .input-box input[type=submit] {
+    background: #a70e0e;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.3s;
+  }
+  
+  .content-box .formulario .input-box input[type=submit]:hover {
+    background: #7a0b0b;
+  }
+  
+  .content-box .formulario .esquecer_senha{
+    margin-bottom: 20px;
+    color: #32324f;
+    font-weight: 400;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .content-box .formulario .esquecer_senha a{
+    text-decoration: none;
+    color: #7c1212;
+  }
+  
+  .content-box .formulario .esquecer_senha a:hover{
+    color: #5c0d0d;
+  }
+  
+  .content-box .formulario .input-box p{
+    color: #32324f;
+  }
+  
+  .content-box .formulario .input-box p a{
+    color: #7c1212;
+  }
+  
+  .content-box .formulario .input-box p a:hover{
+    color: #5c0d0d
+  }
+  
+  .content-box .form-box h3{
+    color: #607d8b;
+  }
+
+
+  /* Validações */
+  .error-validation{
+    color: #FF1A1A;
+    position: absolute;
+    top: 57px;
+    font-size: .8rem;
+  }
+
+  .template{
+      display: none;
+  }

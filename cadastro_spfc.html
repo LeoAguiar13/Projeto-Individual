@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <script src="js/script.js"></script>
+    <title>SPFC | Cadastro</title>
+</head>
+
+<body>
+    <div class="container-cadastro">
+        <div class="img-box">
+            <img src="SPFC.png">
+        </div>
+        <div class="content-box">
+            <div class="formulario">
+                <h2>Cadastro</h2>
+                <form id="register-form">
+
+                    <div class="input-box">
+                        <span>Nome</span>
+                        <input type="text" id="ipt_nome" placeholder="Nome completo">
+                        <small>Error message</small>
+                    </div>
+
+                    <div class="input-box">
+                        <span>Email</span>
+                        <input type="email" id="ipt_email" placeholder="exemplo@email.com">
+                    </div>
+
+                    <div class="input-box">
+                        <span>Senha</span>
+                        <input type="password" id="ipt_senha" placeholder="*********">
+                    </div>
+
+                    <div class="input-box">
+                        <span>Confirmar a senha</span>
+                        <input type="password" id="ipt_conf_senha" placeholder="**********">
+                    </div>
+
+                    <div class="input-box">
+                        <input type="submit" value="Cadastrar" onclick="cadastrar()">
+                    </div>
+
+                    <div id="msg_erro" style="display: none"><b style="color: red;"><br>Preencha todos os campos para
+                            continuar.<br><br></b></div>
+
+                    <div class="input-box">
+                        <p>Já possui uma conta? <a href="login_spfc.html">Logar</a></p>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
