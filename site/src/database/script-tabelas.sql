@@ -1,0 +1,14 @@
+CREATE DATABASE spfc;
+USE spfc;
+
+CREATE TABLE Usuario (
+	idUsuario INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(50),
+    email VARCHAR(50),
+    senha VARCHAR(50)
+);
+
+CREATE TABLE Curiosidade (
+	idCuriosidade INT PRIMARY KEY AUTO_INCREMENT,
+    descricao VARCHAR (500)
+)AUTO_INCREMENT = 1000;
