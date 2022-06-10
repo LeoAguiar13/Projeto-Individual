@@ -5,6 +5,8 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+/* HEADER */
+
 .header{
     display: flex;
     justify-content: space-between;
@@ -12,6 +14,7 @@
     height: 100px;
     align-items:center;
     padding: 20px;
+    border-bottom: 2px solid rgb(173, 173, 173);
 }
 
 .logo img{
@@ -43,10 +46,51 @@ a{
     font-weight: bolder;
     text-decoration: underline;
 }
-
 .aqui a{
     color: #d32417;
 }
+
+/* HEADER */
+
+/* SOCIAL */
+
+.social{
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social .container{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container img{
+    width: 600px;
+}
+
+.texto{
+    /* background-color: red; */
+    display: flex;
+    margin-top: 40px;
+    align-content: center;
+    justify-content: center;
+    width: 800px;
+    flex-direction: column;
+}
+
+.texto p{
+    font-size: 20px;
+}
+
+.texto h2{
+    border-bottom: 1px solid #f03d30;
+}
+
+
+/* SOCIAL */
 
 /* FOOTER */
 
@@ -66,3 +110,18 @@ a{
   }
 
 /* FOOTER */
+
+/* DESCRICÃO */
+#descricao{
+    width: 700px;
+    height: 100px;
+}
+
+#bt_enviar{
+    background-color: #800e0a;
+    color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 50px;
+    cursor: pointer;
+}

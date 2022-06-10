@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/curiosidades.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>SPFC | Curiosidades</title>
 </head>
+
 <body>
-    
+
     <!-- HEADER -->
 
     <div class="header">
@@ -26,6 +29,103 @@
 
     <!-- HEADER -->
 
+    <!-- SOCIAL -->
+
+    <div class="social">
+        <h1>SÃO PAULO FUTEBOL CLUBE</h1>
+        <br>
+        <h2>Curiosidades</h2>
+        <div class="container">
+            <img src="imgs/curiosidades.jpg" alt="">
+            <small>Rogério Ceni com seus recordes.</small>
+        </div>
+
+        <div class="texto">
+            <h2>1. Goleiro artilheiro</h2>
+            <p>O Ex-goleiro do tricolor, e atual técnico, possui o incrível recorde de goleiro com mais gols na
+                história.
+                Totalizando em 131 gols em 1237 jogos, sendo todos eles pelo São Paulo FC.
+            <p>
+                Sua trajetória para começar com esse recorde começou no dia 15 de Fevereiro de 1997, contra o União São
+                João, ganhando o jogo por 2x0.
+            </p>
+            </p>
+        </div>
+
+        <div class="container">
+            <img src="imgs/marco-de-fundacao.jpg" alt="">
+            <small>Marco de fundação criado após o time completar 50 anos.</small>
+        </div>
+
+        <div class="texto">
+            <h2>2. O caçula paulista</h2>
+            <p>Entre todos os quatro maiores de São Paulo, o Tricolor paulista é o mais novo de todos, enquanto o
+                Santos, Corinthians e Palmeiras foram fundados em 1912, 1910 e 1914, respectivamente, o São Paulo surgiu
+                apenas em 1930.</p>
+            <br>
+            <p>
+                Porém, mesmo assim, ele é o time em que mais conquistou títulos internacionais, com três Libertadores,
+                uma Supercopa Libertadores, uma Conmebol, duas Recopas Sulamericanas e três Mundiais.
+            </p>
+        </div>
+
+        <div class="container">
+            <img src="imgs/SPFC_squad_-_1936_-_01.jpg" alt="">
+        </div>
+        <div class="texto">
+            <h2>3. Seu primeiro jogo</h2>
+            <p>
+                O primeiro jogo oficial do São Paulo Futebol Clube aconteceu no dia 25 de Janeiro de 1936 (em seu
+                aniversário de fundação), conta a Portuguesa Santista, no Parque Antártica. Vencendo por 3x2
+            </p>
+        </div>
+
+        <div class="container">
+            <img src="imgs/são paulo simbolos.jfif" alt="">
+            <small></small>
+        </div>
+        <div class="texto">
+            <h2>4. Mantendo as raízes</h2>
+            <p>
+                Desde sua fundação, o São Paulo ainda possui o mesmo estilo do uniforme, e o mesmo emblema. Com apenas
+                poucas alterações, porém mantendo o mesmo padrão.
+            </p>
+        </div>
+
+        <div class="container">
+
+            <div>
+                <canvas id="myChart" style="position: relative; height:38vh; width:35vw"></canvas>
+            </div>
+
+
+        </div>
+        <div class="texto">
+            <h2>5. Maiores artilheiros</h2>
+            <p>
+                Os maiores artilheriros do São Paulo são: 1º Serginho Chulapa (242 gols); 2º Gino Orlando (233 gols); 3º
+                Luis Fabiano (212 gols); entre outros.(Como mostra o gráfico acima).
+            </p>
+        </div>
+
+
+        <br><br><br><br><br><br>
+        Conhece alguma curiosidade que não está no site?
+        <input id="descricao" type="text">
+        <br><br>
+        <button id="bt_enviar" onclick="enviar()">Enviar</button>
+
+        <div id="mensagem"></div>
+
+
+
+
+
+
+    </div>
+
+    <!-- SOCIAL -->
+
 
     <!-- FOOTER -->
 
@@ -38,4 +138,92 @@
     <!-- FOOTER -->
 
 </body>
+
 </html>
+
+<script>
+
+    ObterDados();
+
+    function ObterDados() {
+        fetch("/medidas/curiosidades", { cache: "no-store" }).then(function (resposta) {
+
+            if (resposta.status == 200) {
+                console.log('Deu certo');
+                resposta.json().then(function (response) {
+                    console.log("resposta: ", response);
+                    plotarDados(response)
+                })
+
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+    }
+
+    function plotarDados(jogadores) {
+        var nomes = [];
+        var gols = [];
+
+        for (var index = 0; index < jogadores.length; index++) {
+            var nomeV = jogadores[index];
+
+            nomes.push(nomeV.nomeJogador);
+            gols.push(nomeV.qtdGol);
+        }
+        console.log(nomes)
+        console.log(gols)
+
+        const labels = nomes;
+
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Gols',
+                backgroundColor: 'rgb(255, 0, 0)',
+                borderColor: 'rgb(255, 0, 0)',
+                data: gols,
+            }]
+        };
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {}
+        };
+
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+
+
+    }
+
+    var descricoes = [];
+        function enviar() {
+            mensagem.innerHTML = "";
+            descricoes.push(descricao.value);
+            descricao.value = "";
+
+            for (var index = 1; index - 1 < descricoes.length; index++) {
+                if (index % 2 == 0) {
+                    mensagem.innerHTML += `<br> <br>`
+                    mensagem.innerHTML += `Nome: <span style="color: red">${sessionStorage.NOME_USUARIO}</span>`
+                    mensagem.innerHTML += `<br>`
+                    mensagem.innerHTML += `Curiosidade: ${descricoes[index - 1]}`
+                }
+                else {
+                    mensagem.innerHTML += `<br> <br>`
+                    mensagem.innerHTML += `Nome: <span style="color: black">${sessionStorage.NOME_USUARIO}</span>`
+                    mensagem.innerHTML += `<br>`
+                    mensagem.innerHTML += `Curiosidade: ${descricoes[index - 1]}`
+                }
+            }
+        }
+
+
+</script>
