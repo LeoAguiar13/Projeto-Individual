@@ -23,7 +23,7 @@
             <li> <a href="curiosidades.html">Curiosidades</a> </li>
         </ul>
 
-        <div class="leave"><a href="index.html"><img src="imgs/leave.png" alt=""></a></div>
+        <div class="leave"><a href="index.html" onclick="sair()"><img src="imgs/leave.png" alt=""></a></div>
     </div>
 
     <!-- HEADER -->
@@ -103,3 +103,9 @@
 </body>
 
 </html>
+
+<script>
+    function sair() {
+            sessionStorage.clear();
+        }
+</script>

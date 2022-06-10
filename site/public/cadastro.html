@@ -91,6 +91,10 @@
             // finalizarAguardar();
             return false;
         }
+        else if (senhaVar.length < 8) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "<strong>Senha fraca! Certifique-se que sua senha possui 8 caracteres ou mais.</strong>"
+        }
         else {
             setInterval(sumirMensagem, 5000)
         }

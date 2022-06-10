@@ -24,7 +24,7 @@
             <li class="aqui"> <a href="curiosidades.html">Curiosidades</a> </li>
         </ul>
 
-        <div class="leave"><a href="index.html"><img src="imgs/leave.png" alt="sair"></a></div>
+        <div class="leave"><a href="index.html" onclick="sair()"><img src="imgs/leave.png" alt="sair"></a></div>
     </div>
 
     <!-- HEADER -->
@@ -223,6 +223,10 @@
                     mensagem.innerHTML += `Curiosidade: ${descricoes[index - 1]}`
                 }
             }
+        }
+
+        function sair() {
+            sessionStorage.clear();
         }
 
 
